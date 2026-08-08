@@ -8,7 +8,7 @@ The focus is on learning **how to think about software design**.
 
 ---
 
-## 🎯 Goal
+# 🎯 Goal
 
 Develop the ability to take a problem with changing requirements and:
 
@@ -82,14 +82,30 @@ Design starts becoming difficult
    ↓
 Understand the underlying problem
    ↓
-Learn the relevant principle/pattern
+Discover the relevant concept
    ↓
 Redesign
    ↓
 Implement in TypeScript
+   ↓
+Document what I learned
 ```
 
 The objective is to develop **design intuition**, not pattern-recitation skills.
+
+### Important Rule
+
+> **Don't design from class names. Design from responsibilities.**
+
+Before creating a class, ask:
+
+```text
+What responsibility does this class have?
+Why does it need to exist?
+What problem does it solve?
+```
+
+Do not introduce abstractions, services, or patterns unless a real requirement gives us a reason to do so.
 
 ---
 
@@ -97,14 +113,18 @@ The objective is to develop **design intuition**, not pattern-recitation skills.
 
 ## Phase 0 — Understand the Basics
 
+Build a practical understanding of object-oriented concepts before going deeper into LLD.
+
 * [ ] Class & Object
-* [ ] Interface
+* [x] Interface
 * [ ] Encapsulation
-* [ ] Abstraction
+* [x] Abstraction
 * [ ] Inheritance
-* [ ] Polymorphism
+* [x] Polymorphism
 * [ ] Composition
 * [ ] Composition vs Inheritance
+
+> Concepts are marked complete only when I can explain them in my own words and use them in a design problem.
 
 ---
 
@@ -120,14 +140,16 @@ Learn how to go from a problem statement to a basic object-oriented design.
 * [ ] Handle changing requirements
 * [ ] Identify design smells
 * [ ] Refactor the design
+* [ ] Avoid unnecessary abstractions
+* [ ] Design based on responsibilities
 
-### Problems
+### Explorations / Problems
 
-| # | Problem        | Concepts Discovered | Status |
-| - | -------------- | ------------------- | ------ |
-| 1 | Coffee Machine | —                   | ⬜      |
-| 2 | TBD            | —                   | ⬜      |
-| 3 | TBD            | —                   | ⬜      |
+| # | Problem / Exploration | Concepts Discovered                                                  | Status |
+| - | --------------------- | -------------------------------------------------------------------- | ------ |
+| 1 | User & Permissions    | Interface, Abstraction, Polymorphism, Separation of Responsibilities | ✅      |
+| 2 | Coffee Machine        | —                                                                    | ⬜      |
+| 3 | TBD                   | —                                                                    | ⬜      |
 
 ---
 
@@ -146,14 +168,20 @@ For every principle, understand:
 ```text
 Problem
    ↓
-Bad design
+Naive / Bad design
    ↓
 Why it becomes difficult
+   ↓
+Understand the underlying problem
    ↓
 Principle
    ↓
 Improved design
 ```
+
+The goal is not to memorize the formal definition.
+
+The goal is to recognize **when a design is violating a principle and why that matters**.
 
 ---
 
@@ -161,18 +189,18 @@ Improved design
 
 Learn patterns only when there is a problem that benefits from them.
 
-### Creational
+## Creational
 
 * [ ] Factory
 * [ ] Builder
 * [ ] Singleton
 
-### Structural
+## Structural
 
 * [ ] Adapter
 * [ ] Decorator
 
-### Behavioral
+## Behavioral
 
 * [ ] Strategy
 * [ ] Observer
@@ -184,10 +212,17 @@ For every pattern, understand:
 
 ```text
 What problem does it solve?
+        ↓
 Why does the naive approach become difficult?
+        ↓
 What does the pattern change?
+        ↓
+Why does that improve the design?
+        ↓
 When should I NOT use it?
 ```
+
+A pattern should be learned as a **solution to a design problem**, not as a template to memorize.
 
 ---
 
@@ -195,20 +230,20 @@ When should I NOT use it?
 
 Apply everything learned to real interview-style problems.
 
-### Beginner
+## Beginner
 
 * [ ] Coffee Machine
 * [ ] Tic-Tac-Toe
 * [ ] Vending Machine
 
-### Intermediate
+## Intermediate
 
 * [ ] Parking Lot
 * [ ] Library Management System
 * [ ] Snake & Ladder
 * [ ] Elevator System
 
-### Advanced
+## Advanced
 
 * [ ] ATM
 * [ ] Splitwise
@@ -222,7 +257,7 @@ The list will evolve as I learn.
 
 # 📝 Problem Documentation Format
 
-Each major problem will be documented as a Markdown file.
+Each major problem or exploration will be documented as a Markdown file.
 
 Example:
 
@@ -231,7 +266,7 @@ Example:
 └── parking-lot.md
 ```
 
-Each problem should capture the **evolution of the design**, not just the final solution.
+Each note should capture the **evolution of the design**, not just the final solution.
 
 A typical note will contain:
 
@@ -245,7 +280,7 @@ A typical note will contain:
 7. What Broke?
 8. Why Did It Break?
 9. Design Improvement
-10. Principle / Pattern Discovered
+10. Concept / Principle / Pattern Discovered
 11. Final Design
 12. Final TypeScript Implementation
 13. Design Decisions
@@ -253,6 +288,10 @@ A typical note will contain:
 15. Interview Questions
 16. Things I Still Don't Understand
 ```
+
+The exact structure can change when a problem requires something different.
+
+The important thing is to preserve the **thinking process**.
 
 ---
 
@@ -266,6 +305,7 @@ lld-typescript/
 ├── 00-basics/
 │
 ├── 01-design-thinking/
+│   └── 01-first-design-exploration.md
 │
 ├── 02-solid/
 │
@@ -309,11 +349,13 @@ Requirement change
    ↓
 Design improvement
    ↓
-Principle / Pattern
+Concept / Principle / Pattern
    ↓
 Final design
    ↓
 Code
+   ↓
+Revision questions
 ```
 
 This will allow me to use the notes later for revision before interviews.
@@ -336,17 +378,25 @@ By the end of this journey, I should be able to receive an LLD problem and indep
 10. Implement the final design in TypeScript
 11. Explain my design decisions clearly
 
+Most importantly, I should be able to explain:
+
+> **Why did I choose this design?**
+
+rather than simply:
+
+> **What pattern did I use?**
+
 ---
 
 # 📈 Progress
 
 ### Current Stage
 
-**Starting LLD from scratch**
+**Building design thinking**
 
-### Problems Solved
+### Problems / Explorations Completed
 
-**0**
+**1**
 
 ### Design Patterns Learned
 
@@ -356,12 +406,61 @@ By the end of this journey, I should be able to receive an LLD problem and indep
 
 **0 / 5**
 
+### OOP Concepts Understood
+
+**3 / 8**
+
 ### Current Focus
 
-**Building design thinking**
+**Understanding how designs evolve from changing requirements**
 
 ---
 
-## ⭐ Core Principle
+# 🧩 First Exploration
+
+The first exploration was intentionally small:
+
+```text
+User
+ ↓
+Permission
+ ↑
+ ├── RoleBasedPermission
+ └── ExternalPermission
+```
+
+We also explored how database implementations can be separated behind an interface:
+
+```text
+             Database
+            /        \
+           ↓          ↓
+      PostgreSQL     MongoDB
+```
+
+The important lessons were:
+
+* A `User` should not contain unrelated database logic.
+* Different implementations can follow the same interface.
+* Abstraction allows us to hide implementation details.
+* Polymorphism allows the same operation to behave differently for different objects.
+* Responsibilities should be separated when one object starts knowing too much.
+* We should not create a class merely because its name sounds appropriate.
+* New requirements should drive the introduction of abstractions and patterns.
+
+Detailed notes:
+
+```text
+01-design-thinking/
+└── 01-first-design-exploration.md
+```
+
+---
+
+# ⭐ Core Principle
 
 > **Don't memorize the solution. Understand why the design evolved into the solution.**
+
+And even more importantly:
+
+> **Don't start by asking "Which pattern should I use?" Start by asking "What problem am I trying to solve?"**
